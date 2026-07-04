@@ -1,7 +1,19 @@
+@font-face {
+  font-family: "EtchASketch";
+  src: url("./fonts/EASTRIAL.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
 }
 
+h1 {
+  font-family: "EtchASketch", sans-serif;
+  color: #f6cf8d;
+  margin: 0;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -9,29 +21,66 @@ body {
   gap: 16px;
 }
 
-.grid-area {
+.sketch-board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ef5854;
+  border-radius: 24px;
+  width: 580px;
+  height: 687px;
+  margin: 32px 0 0;
+  padding-top: 24px;
+  box-shadow: inset 0 0 0 16px #e04e4b;
+}
+
+.drawing-canvas {
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
-  gap: 2px;
-  width: 600px;
-  height: 600px;
-  padding: 16px;
-  border: 2px solid lightslategray;
+  justify-content: center;
+  gap: 1px;
+  width: 500px;
+  height: 500px;
+  cursor: pointer;
 }
 
 .square {
-  background-color: lightblue;
-  flex: 0 0 calc((100% / var(--grid-size)) - 2px);
+  background-color: hsl(0, 0%, 83%);
+  flex: 0 0 calc((100% / var(--grid-size)) - 1px);
   aspect-ratio: 1/1;
 }
 
 .square:hover {
-  background-color: aqua;
+  background-color: darkgray;
+}
+.sketch-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  height: 300px;
 }
 
-#grid-size {
-  display: block;
-  height: 25px;
-  width: 100px;
-  margin: 16px 0 0;
+.control-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #c1c1c1;
+  box-shadow:
+    0 -8px 0 #b0b0b0,
+    0 12px 20px rgba(0, 0, 0, 0.3);
+  color: lightslategray;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.08s ease;
+  text-transform: uppercase;
+}
+
+.control-btn:active {
+  transform: translateY(-4px);
+  box-shadow:
+    0 -2px 0 #b0b0b0,
+    inset 0 2px 4px rgba(0, 0, 0, 0.25),
+    0 6px 10px rgba(0, 0, 0, 0.15);
 }

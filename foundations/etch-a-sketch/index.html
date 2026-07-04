@@ -4,13 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Etch A Sketch</title>
+    <link rel="icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <main class="container">
-      <button type="button" id="grid-size">Grid Size</button>
-      <section class="grid-area"></section>
+      <div class="sketch-board">
+        <h1>Etch A Sketch</h1>
+        <section class="drawing-canvas" aria-label="Drawing Canvas"></section>
+        <section class="sketch-controls" aria-label="Sketch Controls">
+          <button type="button" class="control-btn" id="resize-btn">
+            Resize
+          </button>
+          <button type="button" class="control-btn" id="clear-btn">
+            Clear
+          </button>
+        </section>
+      </div>
     </main>
   </body>
 </html>
